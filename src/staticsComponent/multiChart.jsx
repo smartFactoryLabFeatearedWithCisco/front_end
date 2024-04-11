@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Animation,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
@@ -24,6 +25,11 @@ ChartJS.register(
 export default function MultiLine({ machinedata }) {
   const options = {
     responsive: true,
+    Animation: {
+      onComlete: () => {
+        delay = false;
+      },
+    },
     interaction: {
       mode: "index",
       intersect: false,
@@ -57,22 +63,11 @@ export default function MultiLine({ machinedata }) {
           drawOnChartArea: false,
         },
       },
-      y3: {
-        type: "linear",
-        display: true,
-        position: "right",
-        grid: {
-          drawOnChartArea: false,
-        },
-      },
     },
   };
   console.log(machinedata);
   const labels = Array.from({ length: 60 }, (_, index) => index + 1);
-  const list = [
-    14, 2, 23, 12, 32, 46, 4, 1, 2, 3, 15, 2, 3, 52, 1, 4, 2, 5, 12, 6, 12, 34,
-    2, 3, 2, 21, 1, 1,
-  ];
+
   const list2 = [
     23, 24, 31, 24, 23, 15, 3, 4, 7, 10, 13, 8, 4, 32, 5, 44, 21, 35, 24, 6, 12,
     34, 20, 15, 8, 12, 8, 12,
@@ -83,21 +78,32 @@ export default function MultiLine({ machinedata }) {
     datasets: [
       {
         label: "전력량",
-        data: list.map((item) => item),
+        data: machinedata.map((item) => item["temp(melt)"]),
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
         yAxisID: "y",
+        fill: false,
       },
       {
         label: "가스량",
-        data: list2.map((item) => item),
+        data: machinedata.map((item) => item["temp(air)"]),
 
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
         yAxisID: "y1",
+        fill: false,
+      },
+      {
+        label: "가스량",
+        data: machinedata.map((item) => item["gas(melt)"]),
+
+        borderColor: "rgb(53, 162, 235)",
+        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        yAxisID: "y1",
+        fill: true,
       },
     ],
   };
 
-  return <Line options={options} data={data} />;
+  return <Line options={options} data={data} updateMode="resize" />;
 }

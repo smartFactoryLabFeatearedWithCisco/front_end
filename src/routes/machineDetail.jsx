@@ -5,12 +5,8 @@ import { useEffect, useState } from "react";
 
 export default function MachinDetail() {
   let param = useParams().machinName;
-  console.log(param);
 
-  const [machineData, setMachineData] = useState({});
-
-  console.log(dataForCamera[param]);
-  useEffect(() => {
+  function reRenderor() {
     fetch(`http://127.0.0.1:3000/macineDetail/${param}/60`, {
       method: "GET",
     })
@@ -18,11 +14,19 @@ export default function MachinDetail() {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
-
-        setMachineData(JSON.stringify(data));
+        setMachineData(data);
       });
-  }, []);
+  }
+
+  const [machineData, setMachineData] = useState([]);
+
+  console.log(dataForCamera[param]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      reRenderor();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [machineData]);
 
   return (
     <div className="w-full h-full py-6 px-8 flex flex-col">
