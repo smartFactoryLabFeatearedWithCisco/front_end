@@ -20,13 +20,11 @@ export default function Overview() {
       </div>
       <div className="w-full flex justify-around gap-4 my-4 h-full">
         <div className=" border w-full bg-white rounded-xl shadow-sm h-60">
-          <p className="text-md font-semibold mx-4 my-2">현재 온도</p>
+          <p className="text-md font-semibold mx-4  my-2">현재 온도</p>
           <LinePlot data={lint} width={400} height={200}></LinePlot>
         </div>
         <div className="border w-full bg-white rounded-xl shadow-sm">
-          <p className="text-md font-semibold mx-4 my-2">
-            <Doughnut />
-          </p>
+          <p className="text-md font-semibold mx-4 my-2"></p>
         </div>
         <div className=" border w-full bg-white rounded-xl shadow-sm">
           <p className="text-md font-semibold mx-4 my-2">암거나</p>

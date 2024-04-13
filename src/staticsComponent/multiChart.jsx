@@ -23,6 +23,14 @@ ChartJS.register(
 );
 
 export default function MultiLine({ machinedata }) {
+  const colorPallete = [
+    { r: 225, g: 21, b: 21 },
+    { r: 35, g: 21, b: 225 },
+    { r: 21, g: 225, b: 28 },
+    { r: 21, g: 218, b: 225 },
+    { r: 221, g: 21, b: 225 },
+    { r: 225, g: 137, b: 21 },
+  ];
   const options = {
     responsive: true,
     Animation: {
@@ -77,28 +85,47 @@ export default function MultiLine({ machinedata }) {
     labels,
     datasets: [
       {
-        label: "전력량",
+        label: "내부 온도, Celcius",
         data: machinedata.map((item) => item["temp(melt)"]),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "rgb(225, 21, 21)",
+        backgroundColor: "rgba(225, 21, 21, 0.5)",
         yAxisID: "y",
         fill: false,
       },
+
       {
-        label: "가스량",
+        label: "대기 온도,Celcius",
         data: machinedata.map((item) => item["temp(air)"]),
 
         borderColor: "rgb(53, 162, 235)",
         backgroundColor: "rgba(53, 162, 235, 0.5)",
         yAxisID: "y1",
-        fill: false,
+        fill: true,
       },
       {
-        label: "가스량",
+        label: "가스 배출량, g",
         data: machinedata.map((item) => item["gas(melt)"]),
 
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        borderColor: "rgb(21, 218, 225)",
+        backgroundColor: "rgba(21, 218, 225, 0.5)",
+        yAxisID: "y1",
+        fill: true,
+      },
+      {
+        label: "가스 사용량,g",
+        data: machinedata.map((item) => item["gas_use"]),
+
+        borderColor: "rgb(221, 21, 225)",
+        backgroundColor: "rgba(221, 21, 225, 0.5)",
+        yAxisID: "y1",
+        fill: true,
+      },
+      {
+        label: "전력 사용량, KW/h",
+        data: machinedata.map((item) => item["elec_use"]),
+
+        borderColor: "rgb(225, 237, 21)",
+        backgroundColor: "rgba(225, 237, 21, 0.5)",
         yAxisID: "y1",
         fill: true,
       },
