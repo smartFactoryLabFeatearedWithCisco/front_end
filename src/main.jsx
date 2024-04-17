@@ -9,6 +9,9 @@ import Hello from "./routes/overview.jsx";
 import Overview from "./routes/overview.jsx";
 import MachinDetail from "./routes/machineDetail.jsx";
 import Analying from "./routes/analying.jsx";
+import Network from "./routes/network.jsx";
+import EBAM from "./routes/ebam.jsx";
+import Matarialmanaging from "./routes/matarialManaging.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +27,16 @@ const router = createBrowserRouter([
         element: <MachinDetail />,
       },
       {
-        path: "/analying/:analType",
-        element: <Analying />,
+        path: "/network",
+        element: <Network />,
+      },
+      {
+        path: "/EBAM",
+        element: <EBAM />,
+      },
+      {
+        path: "/matarialManaging",
+        element: <Matarialmanaging />,
       },
     ],
   },

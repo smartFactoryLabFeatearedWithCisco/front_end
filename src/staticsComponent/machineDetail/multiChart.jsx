@@ -120,15 +120,15 @@ export default function MultiLine({ machinedata }) {
         yAxisID: "y1",
         fill: true,
       },
-      {
-        label: "전력 사용량, KW/h",
-        data: machinedata.map((item) => item["elec_use"]),
+      // {
+      //   label: "전력 사용량, KW/h",
+      //   data: machinedata.map((item) => item["elec_use"]),
 
-        borderColor: "rgb(225, 237, 21)",
-        backgroundColor: "rgba(225, 237, 21, 0.5)",
-        yAxisID: "y1",
-        fill: true,
-      },
+      //   borderColor: "rgb(225, 237, 21)",
+      //   backgroundColor: "rgba(225, 237, 21, 0.5)",
+      //   yAxisID: "y1",
+      //   fill: true,
+      // },
     ],
   };
 

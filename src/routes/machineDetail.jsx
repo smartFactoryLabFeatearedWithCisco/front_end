@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { dataForCamera } from "../cameraData";
-import MultiLine from "../staticsComponent/multiChart";
+import MultiLine from "../staticsComponent/machineDetail/multiChart";
 import { useEffect, useState } from "react";
-import PieCarbonEmission from "../staticsComponent/pieCarbonEmission";
+import PieCarbonEmission from "../staticsComponent/machineDetail/pieCarbonEmission";
+import { VertBar } from "../staticsComponent/vertBar";
 
 export default function MachinDetail() {
   let param = useParams().machinName;
@@ -49,7 +50,29 @@ export default function MachinDetail() {
             <MultiLine machinedata={machineData} />
           )}
         </div>
-        <div className="w-4/12 border bg-white rounded-xl shadow-sm ">
+        <div className="w-4/12 border  bg-white rounded-xl shadow-sm ">
+          <div className="absolute t-4 w-80 flex justify-around">
+            <div>
+              <button
+                onClick={() => {
+                  console.log(12);
+                }}
+                className="absolute mt-4 ml-4 text-white"
+              >
+                가스 누출
+              </button>
+            </div>
+            <div>
+              <button
+                onClick={() => {
+                  console.log("비상 비상");
+                }}
+                className="absolute mt-4 ml-4 text-white"
+              >
+                전력 끊김
+              </button>
+            </div>
+          </div>
           <p className="text-md font-semibold mx-4 my-2">CAM</p>
           <img
             className="h-52  w-11/12 mx-auto rounded-md"
@@ -59,7 +82,7 @@ export default function MachinDetail() {
         </div>
       </div>
       <div className="w-full flex justify-around gap-4 my-4 h-full">
-        <div className=" border pb-8 pt-3 w-full bg-white rounded-xl  shadow-sm h-60">
+        <div className=" border pb-8 pt-3 w-4/12 bg-white rounded-xl  shadow-sm h-60">
           <p className="text-sm mx-auto font-semibold  text-start pl-4">
             탄소 발생량
           </p>
@@ -69,10 +92,10 @@ export default function MachinDetail() {
             <PieCarbonEmission dataset={carbonEmission} />
           )}
         </div>
-        <div className="border w-full bg-white rounded-xl shadow-sm">
-          <p className="text-md font-semibold mx-4 my-2 ">전력 사용량</p>
+        <div className="border w-5/12 bg-white rounded-xl shadow-sm">
+          <VertBar machinedata={machineData} />
         </div>
-        <div className=" border w-full bg-white rounded-xl shadow-sm">
+        <div className=" border w-3/12 bg-white rounded-xl shadow-sm">
           <p className="text-md font-semibold mx-4 my-2">원격 제어</p>
           <div className="flex flex-col w-full gap-5 items-center  mt-5">
             <button className="border w-3/4 rounded-lg  border-black hover:bg-gray-300">

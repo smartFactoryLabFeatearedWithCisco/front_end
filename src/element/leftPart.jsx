@@ -143,7 +143,7 @@ export default function LeftPart() {
       </div>
       <p className="text-lg font-bold ">관리자</p>
       <div className="pl-2 gap-4">
-        <Link to="/analying/network">
+        <Link to="/network">
           <p
             className={`text-md hover:cursor-pointer ${
               isClicked === "network" ? "bg-gray-300" : ""
@@ -155,7 +155,7 @@ export default function LeftPart() {
             네트워크
           </p>
         </Link>
-        <Link to="/analying/EBAM">
+        <Link to="/EBAM">
           <p
             className={`text-md hover:cursor-pointer ${
               isClicked === "EBAM" ? "bg-gray-300" : ""
@@ -167,7 +167,7 @@ export default function LeftPart() {
             EBAM
           </p>
         </Link>
-        <Link to="/analying/prePrice">
+        <Link to="/matarialmanaging">
           <p
             className={`text-md hover:cursor-pointer ${
               isClicked === "prePrice" ? "bg-gray-300" : ""
@@ -176,19 +176,7 @@ export default function LeftPart() {
               setIsClicked("prePrice");
             }}
           >
-            전구물 가격
-          </p>
-        </Link>
-        <Link to="/analying/energy">
-          <p
-            className={`text-md hover:cursor-pointer ${
-              isClicked === "energy" ? "bg-gray-300" : ""
-            } text-md hover:text-lg  rounded-lg font-semibold`}
-            onClick={() => {
-              setIsClicked("energy");
-            }}
-          >
-            에너지 관리
+            자원 관리
           </p>
         </Link>
       </div>

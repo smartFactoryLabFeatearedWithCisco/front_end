@@ -1,6 +1,6 @@
 import { dataForCamera } from "../cameraData";
 import { Doughnut } from "react-chartjs-2";
-import LinePlot from "../staticsComponent/Lineplot";
+import LinePlot from "../staticsComponent/machineDetail/Lineplot";
 
 export default function Overview() {
   let lint = ["1", "2", "3", "4", "5", "5", "7", "8"];
