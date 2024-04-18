@@ -10,7 +10,7 @@ import Overview from "./routes/overview.jsx";
 import MachinDetail from "./routes/machineDetail.jsx";
 import Analying from "./routes/analying.jsx";
 import Network from "./routes/network.jsx";
-import EBAM from "./routes/ebam.jsx";
+import CBAM from "./routes/Cbam.jsx";
 import Matarialmanaging from "./routes/matarialManaging.jsx";
 
 const router = createBrowserRouter([
@@ -31,8 +31,8 @@ const router = createBrowserRouter([
         element: <Network />,
       },
       {
-        path: "/EBAM",
-        element: <EBAM />,
+        path: "/CBAM",
+        element: <CBAM />,
       },
       {
         path: "/matarialManaging",

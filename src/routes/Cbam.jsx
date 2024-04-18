@@ -4,7 +4,7 @@ import MultiLine from "../staticsComponent/machineDetail/multiChart";
 import { useEffect, useState } from "react";
 import PieCarbonEmission from "../staticsComponent/machineDetail/pieCarbonEmission";
 
-export default function EBAM() {
+export default function CBAM() {
   let param = useParams().machinName;
 
   function reRenderor() {}

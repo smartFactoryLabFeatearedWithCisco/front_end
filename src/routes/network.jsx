@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { dataForCamera } from "../cameraData";
 import MultiLine from "../staticsComponent/machineDetail/multiChart";
 import { useEffect, useState } from "react";
@@ -61,7 +61,9 @@ export default function Network() {
             <img className="mt-8" src="./public/router1.png" />
           </div>
           <div className="h-12 pt-2 border-t border-gray-300  bg-slate-200">
-            <p className="text-center text-lg">Router-1</p>
+            <Link to="http://10.150.1.2">
+              <p className="text-center text-lg">switch-1</p>
+            </Link>
           </div>
         </div>
         <div className="border  w-full bg-white rounded-xl shadow-sm h-44 hover:cursor-pointer flex flex-col justify-between ">
@@ -69,7 +71,9 @@ export default function Network() {
             <img className="mt-8" src="./public/router1.png" />
           </div>
           <div className="h-12 pt-2 border-t border-gray-300  bg-slate-200">
-            <p className="text-center text-lg">Router-1</p>
+            <Link to="http://10.150.2.2">
+              <p className="text-center text-lg">switch-1</p>
+            </Link>
           </div>
         </div>
         <div className="border  w-full bg-white rounded-xl shadow-sm h-44 hover:cursor-pointer flex flex-col justify-between ">
@@ -77,7 +81,9 @@ export default function Network() {
             <img className="mt-8" src="./public/router1.png" />
           </div>
           <div className="h-12 pt-2 border-t border-gray-300  bg-slate-200">
-            <p className="text-center text-lg">Router-1</p>
+            <Link to="http://10.150.3.2">
+              <p className="text-center text-lg">Router-1</p>
+            </Link>
           </div>
         </div>
         <div className="border  w-full bg-white rounded-xl shadow-sm h-44 hover:cursor-pointer flex flex-col justify-between ">

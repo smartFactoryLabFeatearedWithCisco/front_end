@@ -155,16 +155,16 @@ export default function LeftPart() {
             네트워크
           </p>
         </Link>
-        <Link to="/EBAM">
+        <Link to="/CBAM">
           <p
             className={`text-md hover:cursor-pointer ${
-              isClicked === "EBAM" ? "bg-gray-300" : ""
+              isClicked === "CBAM" ? "bg-gray-300" : ""
             } text-md hover:text-lg  rounded-lg font-semibold`}
             onClick={() => {
-              setIsClicked("EBAM");
+              setIsClicked("CBAM");
             }}
           >
-            EBAM
+            CBAM
           </p>
         </Link>
         <Link to="/matarialmanaging">
