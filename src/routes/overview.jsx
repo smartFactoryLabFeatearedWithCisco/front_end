@@ -7,7 +7,9 @@ export default function Overview() {
   return (
     <div className="w-full h-full py-6 px-8 flex flex-col">
       <div className="flex w-full h-72 justify-between gap-4">
-        <div className="w-8/12 border bg-white rounded-xl shadow-sm "></div>
+        <div className="w-8/12 border bg-white rounded-xl shadow-sm ">
+          준비중..
+        </div>
         <div className="w-4/12 border bg-white rounded-xl shadow-sm">
           <p className="text-md font-semibold mx-4 my-2">CAM</p>
           <img
