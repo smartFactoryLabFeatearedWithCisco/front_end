@@ -2,22 +2,22 @@ import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export default function LeftPart() {
-  const [isClicked, setIsClicked] = useState("overView");
+  const [isClicked, setIsClicked] = useState("meltingM");
   return (
     <div className="rounded-xl bg-white my-4 h-full mx-4 border shadow-sm  w-2/12 flex flex-col px-4 py-12 gap-4">
       <div>
-        <Link to="/overView">
-          <p
-            className={`text-lg font-bold hover:cursor-pointer ${
-              isClicked === "overView" ? "bg-gray-300" : ""
-            } hover:text-lg  rounded-lg `}
-            onClick={() => {
-              setIsClicked("overView");
-            }}
-          >
-            개요
-          </p>
-        </Link>
+        {/* <Link to="/overView"> */}
+        <p
+          className={`text-lg font-bold hover:cursor-pointer ${
+            isClicked === "overView" ? "bg-gray-300" : ""
+          } hover:text-lg  rounded-lg `}
+          // onClick={() => {
+          //   setIsClicked("overView");
+          // }}
+        >
+          개요
+        </p>
+        {/* </Link> */}
       </div>
       <div>
         <p className="text-lg font-bold mb-4">개별 관리</p>
