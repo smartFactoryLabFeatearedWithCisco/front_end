@@ -1,7 +1,7 @@
 # front_end
 
 
-[![test video]](https://youtube.com/watch?v=me5vmpha5zw)
+[![test video](https://img.youtube.com/vi/me5vmpha5zw/0.jpg)](https://youtube.com/watch?v=me5vmpha5zw)
 
 ## 테스트 하는법
   시뮬레이터를 다운 받습니다.   
